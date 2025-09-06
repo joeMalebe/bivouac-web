@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserModule } from './user/user.module';
+import { ReportModule } from './report/report.module';
+import { SalesReportComponent } from './report/sales-report/sales-report.component';
 
 const routes:Route[] = [{
   path: '',
@@ -15,7 +17,12 @@ const routes:Route[] = [{
   {
     path: 'users',
     component: UserListComponent
-  }]
+  },
+  {
+    path: 'sales',
+    component:SalesReportComponent
+  }
+]
 
 @NgModule({
   declarations: [
@@ -25,6 +32,7 @@ const routes:Route[] = [{
   imports: [
     BrowserModule,
     UserModule,
+    ReportModule,
     AppRoutingModule,
     RouterModule.forRoot(routes)
   ],
