@@ -5,6 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { DailyReportService } from '../daily-report.service';
 import { DailySalesReport } from '../model/daily-sales-report';
 import { GuestOccupation } from '../model/guest-occupation';
 
@@ -17,8 +18,9 @@ export class SalesReportComponent implements OnInit {
   dailyReport!: DailySalesReport;
   drinks!: number;
   isNoOccupations: boolean = false;
+  currency: string = "CDF";
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,private dailyReportService:DailyReportService) {}
 
   form: FormGroup = new FormGroup({});
   occupations: GuestOccupation[] = [];
@@ -50,11 +52,15 @@ export class SalesReportComponent implements OnInit {
     this.dailyReport = {
       occupations: this.occupations,
       noOccupationsDay: this.isNoOccupations,
+      currency:this.currency,
       capturedBy: 'Joe', //get user by session data
       dateCaptured: new Date(),
       resturantSales: this.drinks,
     };
-    console.log(this.dailyReport);
+    this.dailyReportService.postDailyReport(this.dailyReport).subscribe((value)=> {
+      console.log(JSON.stringify(value));
+    })
+    
   }
   isNoOccupationsDay(): boolean {
     return this.occupations.length < 1 && this.isNoOccupations;
