@@ -1,0 +1,36 @@
+
+.menu{
+    right: 0%;
+    top:0%;
+    position: absolute;
+    z-index: 1;
+    background-color: aqua;
+    height: 100vh;
+    width: 40%;
+}
+
+.close-cta{
+  padding: 0.8rem 1.6rem;
+  margin: 1.8rem 0.5rem 0;
+    border: 3px solid black;
+    text-align: center;
+    justify-content: center;
+    background-color: aliceblue;
+    color: #00478c;
+    font-size: xx-large;
+    border-radius: 30%;
+    top:0;
+    right: 0;
+    position: absolute;
+}
+
+@media screen and (max-width: 800px) {
+    .menu{
+        width: 50%;
+    }
+} 
+@media screen and (max-width: 500px) {
+    .menu{
+        width: 100%;
+    }
+} 

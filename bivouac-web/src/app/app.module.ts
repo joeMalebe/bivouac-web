@@ -9,6 +9,7 @@ import { UserListComponent } from './user/user-list/user-list.component';
 import { UserModule } from './user/user.module';
 import { ReportModule } from './report/report.module';
 import { SalesReportComponent } from './report/sales-report/sales-report.component';
+import { MenuComponent } from './menu/menu.component';
 
 const routes:Route[] = [{
   path: '',
@@ -27,7 +28,8 @@ const routes:Route[] = [{
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
