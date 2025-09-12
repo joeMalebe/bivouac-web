@@ -59,6 +59,7 @@ export class SalesReportComponent implements OnInit {
     };
     this.dailyReportService.postDailyReport(this.dailyReport).subscribe((value)=> {
       console.log(JSON.stringify(value));
+      
     })
     
   }
