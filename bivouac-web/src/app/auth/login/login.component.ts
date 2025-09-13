@@ -1,16 +1,25 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
-checkBox: any;
-showPassword(event:any) {
-  this.isShowPassword = event.target.checked
+export class LoginComponent implements OnInit{
 
-  console.log(this.isShowPassword)
+  loginForm!:FormGroup
+  constructor(private fb:FormBuilder) {}
+  ngOnInit(): void {
+    this.loginForm = this.fb.group({
+      username:[undefined,Validators.required],
+      password:[undefined,Validators.required],
+    })
+  }
+submit() {
+  if(this.loginForm.invalid) return
+  alert("hooray")
 }
+
 isShowPassword:boolean = false
 }

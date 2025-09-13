@@ -1,13 +1,14 @@
 <div class="login">
         <h2>Login</h2>
-  <form class="form">
+  <form [formGroup]="loginForm" class="form">
     <div class="item mb">
       <label for="email">Username</label>
-      <input id="email" type="email" placeholder="email" />
+      <input formControlName="username" id="email" type="email" placeholder="email" />
     </div>
     <div class="item mb">
       <label for="password">Password</label>
       <input
+        formControlName='password'
         class="input"
         id="password"
         [type]="isShowPassword ? 'text' : 'password'"
@@ -23,7 +24,7 @@
       </label>
     </div>
     <div class="cta-right">
-      <input class="cta primary-cta" type="submit" (click)="showPassword($event)" />
+      <input class="cta primary-cta" type="submit" (click)="submit()" />
     </div>
   </form>
 </div>
