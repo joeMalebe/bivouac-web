@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -6,10 +7,15 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent {
+constructor(private readonly router:Router){}
+
+  navigateToLogin() {
+    this.router.navigate(['login'])
+    this.isMenuVisible = false
+}
 handleCick() {
   this.isMenuVisible != this.isMenuVisible
-  console.log("clicked target and result is" + this.isMenuVisible)
 }
-@Input() isMenuVisible: boolean = true;
+@Input() isMenuVisible: boolean = false;
 
 }

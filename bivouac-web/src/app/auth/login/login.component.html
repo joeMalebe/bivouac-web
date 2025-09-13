@@ -1,0 +1,29 @@
+<div class="login">
+        <h2>Login</h2>
+  <form class="form">
+    <div class="item mb">
+      <label for="email">Username</label>
+      <input id="email" type="email" placeholder="email" />
+    </div>
+    <div class="item mb">
+      <label for="password">Password</label>
+      <input
+        class="input"
+        id="password"
+        [type]="isShowPassword ? 'text' : 'password'"
+        placeholder="Enter password"
+      />
+      <label (click)="$event.stopPropagation()">
+        <input
+          type="checkbox"
+          name="showPassword"
+          [(ngModel)]="isShowPassword"
+        />
+        Show password
+      </label>
+    </div>
+    <div class="cta-right">
+      <input class="cta primary-cta" type="submit" (click)="showPassword($event)" />
+    </div>
+  </form>
+</div>

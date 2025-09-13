@@ -10,6 +10,8 @@ import { UserModule } from './user/user.module';
 import { ReportModule } from './report/report.module';
 import { SalesReportComponent } from './report/sales-report/sales-report.component';
 import { MenuComponent } from './menu/menu.component';
+import { LoginComponent } from './auth/login/login.component';
+import { AuthModule } from './auth/auth.module';
 
 const routes:Route[] = [{
   path: '',
@@ -22,6 +24,9 @@ const routes:Route[] = [{
   {
     path: 'sales',
     component:SalesReportComponent
+  },{
+    path: 'login',
+    component:LoginComponent
   }
 ]
 
@@ -29,11 +34,12 @@ const routes:Route[] = [{
   declarations: [
     AppComponent,
     HomeComponent,
-    MenuComponent
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
     UserModule,
+    AuthModule,
     ReportModule,
     AppRoutingModule,
     RouterModule.forRoot(routes)
