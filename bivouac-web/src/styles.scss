@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-
+@use 'colors';
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: colors.$background;
+  --foreground: colors.$background-dark;
 }
 
 @theme inline {
@@ -14,8 +14,8 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: colors.$background-dark;
+    --foreground: colors.$background;
   }
 }
 
@@ -94,10 +94,10 @@ a {
 }
 
 .primary-cta {
-  background-color: #00478c;
+  background-color: colors.$primary;
   color: #ffffff;
 }
 .secondary-cta {
   background-color: aliceblue;
-  color: #00478c;
+  color: colors.$primary;
 }

@@ -6,6 +6,10 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent {
-@Input() isMenuVisible: boolean = false;
+handleCick() {
+  this.isMenuVisible != this.isMenuVisible
+  console.log("clicked target and result is" + this.isMenuVisible)
+}
+@Input() isMenuVisible: boolean = true;
 
 }

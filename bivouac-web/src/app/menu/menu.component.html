@@ -1,5 +1,14 @@
-<div class="menu" *ngIf="isMenuVisible" >
+<div class="menu" *ngIf="isMenuVisible">
 <div>
-    <a (click)="isMenuVisible = false" class="close-cta">x</a>
+    <a (click)="isMenuVisible = false" class="close-cta"><img src="../../../assets/cancel.png"/></a>
+</div>
+<div class="menuItems">
+
+    <div class="item">
+        <a>Login</a>
+    </div>
+    <div class="item">
+        <a>Contact us</a>
+    </div>
 </div>
 </div>

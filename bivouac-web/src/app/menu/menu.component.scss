@@ -1,36 +1,67 @@
+@use "/src/colors";
 
-.menu{
-    right: 0%;
-    top:0%;
-    position: absolute;
-    z-index: 1;
-    background-color: aqua;
-    height: 100vh;
-    width: 40%;
+.menu {
+  right: 0%;
+  top: 0%;
+  position: absolute;
+  z-index: 1;
+  background-color: colors.$secondary;
+  height: 100vh;
+  width: 40%;
 }
 
-.close-cta{
+.close-cta {
+  cursor: pointer;
   padding: 0.8rem 1.6rem;
-  margin: 1.8rem 0.5rem 0;
-    border: 3px solid black;
-    text-align: center;
-    justify-content: center;
-    background-color: aliceblue;
-    color: #00478c;
-    font-size: xx-large;
-    border-radius: 30%;
-    top:0;
-    right: 0;
-    position: absolute;
+  margin: 1.8rem 20px 0 0;
+  text-align: center;
+  box-shadow: 0 0 1px 1px;
+  justify-content: center;
+  background-color: colors.$background;
+  color: colors.$primary;
+  font-size: xx-large;
+  border-radius: 30%;
+  top: 0;
+  right: 0;
+  position: absolute;
+
+  img {
+    transition: all 600ms ease-in-out;
+    transition-delay: 200ms;
+    width: 16px;
+    height: 16px;
+  }
+
+  &:hover img {
+    transform: rotate(180deg);
+  }
+}
+
+.menuItems {
+  display: block;
+  position: relative;
+  top: 30%;
+}
+
+.item {
+  text-align: right;
+  padding: 16px;
+  padding-right: 20px;
+  margin: 16px 0;
+  font-size: xx-large;
+  cursor: pointer;
+}
+.item:hover {
+  background-color: colors.$active-item;
 }
 
 @media screen and (max-width: 800px) {
-    .menu{
-        width: 50%;
-    }
-} 
+  .menu {
+    width: 50%;
+  }
+}
 @media screen and (max-width: 500px) {
-    .menu{
-        width: 100%;
-    }
-} 
+  .menu {
+    width: 100%;
+  }
+}
