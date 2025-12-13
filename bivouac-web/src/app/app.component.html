@@ -18,11 +18,15 @@
     <div>
       <app-menu #menu></app-menu>
     </div>
-    <div
+    <div 
       (click)="menu.isMenuVisible = false"
-      [ngClass]="menu.isMenuVisible ? 'dim' : 'normal'"
     >
       <router-outlet></router-outlet>
     </div>
+    <div
+  *ngIf="menu.isMenuVisible"
+  class="fixed inset-0 bg-black/40 z-40"
+  (click)="menu.isMenuVisible = false"
+></div>
   </section>
 </div>
