@@ -12,6 +12,7 @@ import { SalesReportComponent } from './report/sales-report/sales-report.compone
 import { MenuComponent } from './menu/menu.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AuthModule } from './auth/auth.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes:Route[] = [{
   path: '',
@@ -27,6 +28,10 @@ const routes:Route[] = [{
   },{
     path: 'login',
     component:LoginComponent
+  },
+  {
+    path: 'dashboard',
+    component:DashboardComponent
   }
 ]
 
@@ -35,6 +40,7 @@ const routes:Route[] = [{
     AppComponent,
     HomeComponent,
     MenuComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

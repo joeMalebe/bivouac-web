@@ -4,7 +4,9 @@
   --background: colors.$background;
   --foreground: colors.$background-dark;
 }
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
