@@ -14,5 +14,10 @@ export class MenuComponent {
     this.isMenuVisible = false;
   }
 
+  logout() {
+    sessionStorage.clear()
+    this.navigate('')
+  }
+
   @Input() isMenuVisible: boolean = false;
 }

@@ -19,8 +19,13 @@ export class LoginComponent implements OnInit{
   }
 submit() {
   if(this.loginForm.invalid) return
-  this.router.navigate(['dashboard'])
-  alert("hooray")
+  let email = this.loginForm.get('username')?.value;
+  let password = this.loginForm.get('password')?.value;
+  sessionStorage.setItem(
+    'user',
+    JSON.stringify({ email: email, password: password })
+  );
+  this.router.navigate(['dashboard']);
 }
 
 isShowPassword:boolean = false
