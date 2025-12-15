@@ -106,3 +106,14 @@ a {
   color: colors.$primary;
 }
 
+.header-overlay {
+  background-color: rgba(255, 255, 255, 0.1);
+  filter: blur(20px);
+  height: 45%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  mask: linear-gradient(to top, transparent, black 75%);
+  position: absolute;
+}
