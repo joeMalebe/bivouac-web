@@ -1,17 +1,20 @@
 <div class="menu" *ngIf="isMenuVisible">
 <div>
+   
     <a (click)="isMenuVisible = false" class="close-cta"><img src="../../../assets/cancel.png"/></a>
 </div>
 <div class="menuItems">
 
-    <div class="item" (click)="navigate('login')">
-        <a>Login</a>
-    </div>
+    @if(!(isLoggedIn$ | async)) {
+        <div class="item" (click)="navigate('login')">
+            <a>Login</a>
+        </div>
+    }
+
     <div class="item">
         <a>Contact us</a>
     </div>
-
-    
+    @if(isLoggedIn$ | async) {    
     <div class="item"  (click)="navigate('users')">
         <a>Users</a>
     </div>
@@ -21,6 +24,7 @@
     <div class="item" (click)="logout()">
         <a>Logout</a>
     </div>
+}
 </div>
     
 </div>

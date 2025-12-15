@@ -1,17 +1,15 @@
 import { AfterViewInit, Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth/authService';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
 })
-export class MenuComponent implements AfterViewInit {
-  isLoggedIn = false
-  constructor(private readonly router: Router) {}
-  ngAfterViewInit(): void {
-    this.isLoggedIn = sessionStorage.getItem('user') ? true : false
-  }
+export class MenuComponent {
+  isLoggedIn$ = this.authService.isLoggedIn$
+  constructor(private readonly router: Router,readonly authService:AuthService) {}
 
   navigate(destinationUrl:string){
     this.router.navigate([destinationUrl]);
@@ -19,7 +17,8 @@ export class MenuComponent implements AfterViewInit {
   }
 
   logout() {
-    sessionStorage.clear()
+    
+    this.authService.logout()
     this.navigate('')
   }
 
