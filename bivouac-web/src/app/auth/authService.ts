@@ -1,13 +1,13 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private _isLoggedIn$ = new BehaviorSubject(false);
-  isLoggedIn$ = this._isLoggedIn$;
+  private _isLoggedIn = signal(false);
+  readonly isLoggedIn = this._isLoggedIn.asReadonly()
 
   constructor() {
-    this.isLoggedIn$ = new BehaviorSubject(
+    this._isLoggedIn.set(
       sessionStorage.getItem('user') ? true : false
     );
   }
@@ -17,15 +17,11 @@ export class AuthService {
       'user',
       JSON.stringify({ email: email, password: password })
     );
-    this._isLoggedIn$.next(true);
-  }
-
-  isLoggedIn() {
-    return this.isLoggedIn$;
+    this._isLoggedIn.set(true);
   }
 
   logout() {
     sessionStorage.clear();
-    this._isLoggedIn$.next(false);
+    this._isLoggedIn.set(false);
   }
 }

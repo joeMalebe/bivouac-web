@@ -1,0 +1,19 @@
+<div>
+    
+  <app-menu [isMenuVisible]="menuService.isOpen() "></app-menu>
+    <header class="fixed flex justify-between h-32 top-0 left-0 z-50 w-full">
+    <a class="flex z-40 ml-8 mt-4 " href="#"><img src="../../assets/logo.png" /></a>
+    <div class="header-overlay"></div>
+
+    <nav class="h-full mr-8 mt-4">
+      <a class="cta primary-cta " href="#">
+        <span class="cta-text cta-top">Book now</span>
+        <span class="cta-text cta-bottom">Book now</span>
+      </a>
+      <a class="cta secondary-cta" (click)="menuService.toggle()" >
+        <span class="cta-text cta-top">Menu</span>
+        <span class="cta-text cta-bottom">Menu</span>
+      </a>
+    </nav>
+  </header>
+</div>

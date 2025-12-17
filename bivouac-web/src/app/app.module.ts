@@ -13,6 +13,7 @@ import { MenuComponent } from './menu/menu.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AuthModule } from './auth/auth.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NavBarComponent } from "./nav-bar/nav-bar.component";
 
 const routes:Route[] = [{
   path: '',
@@ -39,17 +40,18 @@ const routes:Route[] = [{
   declarations: [
     AppComponent,
     HomeComponent,
-    MenuComponent,
     DashboardComponent,
   ],
   imports: [
+    MenuComponent,
     BrowserModule,
     UserModule,
     AuthModule,
     ReportModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes)
-  ],
+    RouterModule.forRoot(routes),
+    NavBarComponent
+],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]
 })

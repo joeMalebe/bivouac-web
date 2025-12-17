@@ -1,32 +1,9 @@
 <div>
-  <header class="header">
-    <a class="logo" href="#"><img src="../../assets/logo.png" /></a>
-    <div class="header-overlay"></div>
-
-    <nav class="navbar">
-      <a class="cta primary-cta" href="#">
-        <span class="cta-text cta-top">Book now</span>
-        <span class="cta-text cta-bottom">Book now</span>
-      </a>
-      <a class="cta secondary-cta" (click)="menu.isMenuVisible = true">
-        <span class="cta-text cta-top">Menu</span>
-        <span class="cta-text cta-bottom">Menu</span>
-      </a>
-    </nav>
-  </header>
-  <section class="content">
-    <div>
-      <app-menu #menu></app-menu>
-    </div>
-    <div 
-      (click)="menu.isMenuVisible = false"
-    >
-      <router-outlet></router-outlet>
-    </div>
+    <app-nav-bar />
+  <router-outlet></router-outlet>
     <div
-  *ngIf="menu.isMenuVisible"
+  *ngIf="this.menuService.isOpen()"
   class="fixed inset-0 bg-black/40 z-40"
-  (click)="menu.isMenuVisible = false"
+  (click)="this.menuService.close()"
 ></div>
-  </section>
 </div>

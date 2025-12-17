@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuService } from './menu/menuService';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bivouac-web';
+
+  constructor(readonly menuService:MenuService) {
+    
+  }
 }

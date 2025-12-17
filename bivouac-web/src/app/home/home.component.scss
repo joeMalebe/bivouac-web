@@ -7,13 +7,11 @@
   width: 100vw;
   object-fit: cover;
 }
-.content{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 90vh;
-    width: 100vw;
+.screen{
+  display: inline;
+  overflow: scroll;
 }
+
 .slogan {
   position: absolute;
   left: 0;

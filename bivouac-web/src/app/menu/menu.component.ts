@@ -1,19 +1,23 @@
 import { AfterViewInit, Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth/authService';
+import { AsyncPipe, CommonModule } from '@angular/common';
+import { MenuService } from './menuService';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
+  imports: [CommonModule],
+  standalone:true,
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent {
-  isLoggedIn$ = this.authService.isLoggedIn$
-  constructor(private readonly router: Router,readonly authService:AuthService) {}
+  
+  constructor(private readonly router: Router,readonly authService:AuthService, readonly menuService:MenuService) {}
 
   navigate(destinationUrl:string){
     this.router.navigate([destinationUrl]);
-    this.isMenuVisible = false;
+    this.menuService.close()
   }
 
   logout() {

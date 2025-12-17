@@ -1,10 +1,14 @@
-<div class="content">
+<div class="h-screen snap-y overflow-y-scroll snap-mandetory">
+  <!-- <app-nav-bar /> -->
+
+<section class="relative h-screen snap-start snap-mandetory flex items-center justify-center content">
+
   <video
     [autoplay]="true"
     [muted]="true"
     [loop]="true"
     [playsInline]="true"
-    class="bg-video"
+    class="absolute z-10 h-[90vh] top-0 w-full object-cover"
   >
     <source src="../../assets/bivouac.mp4" type="video/mp4" />
     No video
@@ -13,12 +17,14 @@
   <div class="slogan">
     <h1>Bivouac Hotel Kinshasa</h1>
     <h1>Affordable Comfort & Dining</h1>
-    <button [routerLink]="'users'">User list</button>
-    <button [routerLink]="'sales'">Sales report</button>
 
     <!-- /* <h2>Why Choose Bivouac: Your Affordable Hotel in Kinshasa</h2>
           <h2>Experience Fine Dining at Our Kinshasa Hotel Restaurant</h2>
           <h2>Comfortable Rooms & Modern Amenities</h2>
           <h2>Perfect Location in Central Kinshasa</h2> */ -->
   </div>
+</section>
+<section class="h-screen snap-start snap-mandetory flex items-center justify-center">
+  <img src="../../assets/logo.png" />
+</section>
 </div>
