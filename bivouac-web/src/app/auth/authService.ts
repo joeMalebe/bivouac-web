@@ -1,10 +1,16 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   private _isLoggedIn$ = new BehaviorSubject(false);
   isLoggedIn$ = this._isLoggedIn$;
+
+  constructor() {
+    this.isLoggedIn$ = new BehaviorSubject(
+      sessionStorage.getItem('user') ? true : false
+    );
+  }
 
   login(email: string, password: string) {
     sessionStorage.setItem(

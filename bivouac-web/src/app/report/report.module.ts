@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { SalesReportComponent } from './sales-report/sales-report.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
-
 @NgModule({
   declarations: [
     SalesReportComponent
@@ -12,7 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ]
 })
 export class ReportModule { }
