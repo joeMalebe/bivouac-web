@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ScrollLockDirective } from '../appScrollLock';
 
 @Component({
   selector: 'app-home',

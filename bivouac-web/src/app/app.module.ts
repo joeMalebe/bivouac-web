@@ -14,6 +14,8 @@ import { LoginComponent } from './auth/login/login.component';
 import { AuthModule } from './auth/auth.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavBarComponent } from "./nav-bar/nav-bar.component";
+import { ButtonComponent } from "./button/button.component";
+import { ScrollLockDirective } from './appScrollLock';
 
 const routes:Route[] = [{
   path: '',
@@ -50,7 +52,9 @@ const routes:Route[] = [{
     ReportModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
-    NavBarComponent
+    NavBarComponent,
+    ButtonComponent,
+    ScrollLockDirective
 ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]
