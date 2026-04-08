@@ -1,0 +1,67 @@
+<div class="h-screen snap-y overflow-y-scroll snap-mandetory">
+  <!-- <app-nav-bar /> -->
+
+<section class="relative h-screen snap-start snap-mandetory flex items-center justify-center content">
+
+  <video
+    [autoplay]="true"
+    [muted]="true"
+    [loop]="true"
+    [playsInline]="true"
+    class="absolute z-10 h-[90vh] top-0 w-full object-cover"
+  >
+    <source src="../../assets/bivouac.mp4" type="video/mp4" />
+    No video
+  </video>
+  
+  <div class="slogan z-50">
+    <h1 class="text-white" >Bivouac Hotel Kinshasa</h1>
+    <h1 class="text-white">Affordable Comfort & Dining</h1>
+
+    <!-- /* <h2>Why Choose Bivouac: Your Affordable Hotel in Kinshasa</h2>
+          <h2>Experience Fine Dining at Our Kinshasa Hotel Restaurant</h2>
+          <h2>Comfortable Rooms & Modern Amenities</h2>
+          <h2>Perfect Location in Central Kinshasa</h2> */ -->
+  </div>
+</section>
+<section class="flex pl-16 pr-16 mb-16">
+  <div class="block">
+    <div class="">
+      <h2 class="text-black">
+        Restuarant with congolese cuisine.
+      </h2>
+      <h2>
+        Come and dine with us.
+      </h2>
+    </div>
+  <div class="flex flex-wrap justify-between   overflow-hidden">
+
+    <div class="mt-8"><img class="h-[28rem] w-auto object-cover" src="../../assets/resturant/res_good.jpg" /></div>
+    <div class="mt-8"><img class="h-auto w-[20rem] object-cover" src="../../assets/resturant/hallway.jpg" /></div>
+    <div class="mt-8"><img class="h-96 w-auto object-cover" src="../../assets/resturant/res_bar.jpg" /></div>
+    <div class="mt-8"><img class="h-80 w-auto  object-cover" src="../../assets/resturant/res.jpg" /></div>
+    <div class="mt-8"><img class="h-80 w-auto object-cover" src="../../assets/resturant/res3.jpg" /></div>
+    <div class="mt-8"><img class="h-[24rem] w-auto object-cover" src="../../assets/resturant/reception.jpg" /></div>
+  </div>
+  </div>
+</section>
+<section class="h-screen snap-start snap-end snap-mandatory pl-16 pr-16 mb-16" appScrollLock [threshold]="200">
+<div class="h-full flex justify-center items-center">
+  <div class="block">
+  <div>
+  <h1>
+    Check out our rooms
+  </h1>
+</div>
+<div class="flex justify-center items-center">
+  <app-button buttonType="primary" name="Enter"/>
+</div>
+</div>
+</div>
+</section>
+<section class="h-screen">
+<div>
+  <img src="../../assets/resturant/res_good.jpg"/>
+</div>
+</section>
+</div>

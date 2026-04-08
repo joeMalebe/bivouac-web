@@ -1,0 +1,119 @@
+/* You can add global styles to this file, and also import other style files */
+@use 'colors';
+:root {
+  --background: colors.$background;
+  --foreground: colors.$background-dark;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: colors.$background-dark;
+    --foreground: colors.$background;
+  }
+}
+
+body {
+  background: var(--background);
+  margin: 0;
+  color: var(--foreground);
+  font-family: "Montserrat", sans-serif;
+}
+
+h2 {
+    font-family: "Lora", serif;
+  font-size: 2rem;
+  font-weight: 500;
+}
+h1 {
+    font-family: "Lora", serif;
+  font-size: 3rem;
+  font-weight: 700;
+}
+.navbar a {
+  padding: 1.2rem 1.5rem;
+  margin: 0.5rem;
+  border-radius: 32px;
+  text-decoration: none;
+}
+
+.cta {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  padding: 1.2rem 1.5rem;
+  margin: 0.5rem;
+  border-radius: 32px;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cta .cta-top {
+  position: absolute;
+  opacity: 0%;
+}
+
+.cta-text {
+  display: block;
+  transition: transform 400ms ease, opacity 600ms ease;
+}
+
+.cta .cta-bottom {
+  position: relative;
+
+  top: 0;
+  left: 0;
+}
+
+.cta:hover .cta-bottom {
+  transform: translateY(-100%);
+  opacity: 0%;
+}
+
+.cta:hover .cta-top {
+  opacity: 100%;
+}
+
+.cta-top::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  font-size: xx-large;
+  opacity: 100%;
+  z-index: 100;
+}
+
+a {
+  text-decoration: none; /* Removes the underline */
+}
+
+.primary-cta {
+  background-color: colors.$primary;
+  color: #ffffff;
+}
+.secondary-cta {
+  background-color: aliceblue;
+  color: colors.$primary;
+}
+
+.header-overlay {
+  background-color: rgba(255, 255, 255, 0.1);
+  filter: blur(20px);
+  height: 45%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  mask: linear-gradient(to top, transparent, black 75%);
+  position: absolute;
+}

@@ -1,0 +1,86 @@
+<div class="mainContainer">
+  <h1>Daily sales report</h1>
+  <div class="salesForm">
+    <form [formGroup]="form">
+      <!-- <input formControlName="roomNumber" placeholder="Room number" type="number"/> -->
+      <div class="item">
+        <label for="roomNumber">Room number</label>
+        <select
+          formControlName="roomNumber"
+          id="roomNumber"
+          title="Room number"
+        >
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>6</option>
+          <option>7</option>
+        </select>
+        <div *ngIf="isRequired('roomNumber')">
+          <span>*This is required</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <input
+          formControlName="amount"
+          placeholder="Amount"
+          type="number"
+          step="any"
+        />
+        <div *ngIf="isRequired('amount')">
+          <span>*This is required</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <label for="type">Type of stay</label>
+        <select id="type" formControlName="type" title="Type of stay">
+          <option>Passage</option>
+          <option>Full day</option>
+        </select>
+        <div *ngIf="isRequired('type')">
+          <span>*This is required</span>
+        </div>
+      </div>
+      <div class="item">
+        <button (click)="addOccupation()" [disabled]="form.invalid" type="submit">Capture</button>
+        <button (click)="isNoOccupations = true" [disabled]="occupations.length > 0" type="submit">No occupations today</button>
+      </div>
+    </form>
+  </div>
+  <hr />
+  <div class="item">
+    <p *ngFor="let o of occupations">
+      Room: {{ o.roomNumber }} <br>
+      Amount: {{ o.amount }} <br>
+      Type of stay: {{ o.type }}
+    </p>
+    <p *ngIf="isNoOccupationsDay()">
+        No new rooms were occupied today
+    </p>
+    <p *ngIf="drinks != undefined" >Resturant: {{drinks}}</p>
+  </div>
+  <div class="item">
+    <label for="drinks">Resturant sales</label>
+    <input
+    required="true"
+    name="drinks"
+    #drinksRef="ngModel"
+      id="drinks"
+      type="number"
+      placeholder="Drinks sold"
+      [(ngModel)]="drinks"
+    />
+    <div *ngIf="drinksRef.errors && (drinksRef?.touched || drinksRef?.dirty)">
+        <span>*This is required</span>
+      </div>
+  </div>
+  <div class="item">
+    <button [disabled]="drinksRef.invalid" (click)="onSubmitReport()">Submit Report</button>
+  </div>
+  <div *ngIf="dailyReport != undefined">
+    {{dailyReport.occupations.toString()}}
+  </div>
+</div>

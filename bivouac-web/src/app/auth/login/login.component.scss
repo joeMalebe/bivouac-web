@@ -1,0 +1,27 @@
+@use '../../../colors';
+
+.login{
+    position: relative;
+    top:30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 12;
+}
+.item{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 50vw;
+    z-index: 22;
+}
+.cta-right{
+    justify-self: end;
+}
+.form{
+    padding: 20px;
+    box-shadow: 0 0 2px;
+}
+.input{
+
+}

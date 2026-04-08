@@ -1,0 +1,9 @@
+<div>
+    <app-nav-bar />
+  <router-outlet></router-outlet>
+    <div
+  *ngIf="this.menuService.isOpen()"
+  class="fixed inset-0 bg-black/40 z-40"
+  (click)="this.menuService.close()"
+></div>
+</div>

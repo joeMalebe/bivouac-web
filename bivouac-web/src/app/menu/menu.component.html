@@ -1,0 +1,30 @@
+<div class="menu" *ngIf="isMenuVisible">
+<div>
+   
+    <a (click)="this.menuService.close()" class="close-cta"><img src="../../../assets/cancel.png"/></a>
+</div>
+<div class="menuItems">
+
+    @if(!authService.isLoggedIn()) {
+        <div class="item" (click)="navigate('login')">
+            <a>Login</a>
+        </div>
+    }
+
+    <div class="item">
+        <a>Contact us</a>
+    </div>
+    @if(authService.isLoggedIn()) {    
+    <div class="item"  (click)="navigate('users')">
+        <a>Users</a>
+    </div>
+    <div class="item" (click)="navigate('sales')">
+        <a>Sales report</a>
+    </div>
+    <div class="item" (click)="logout()">
+        <a>Logout</a>
+    </div>
+}
+</div>
+    
+</div>

@@ -1,0 +1,30 @@
+<div class="login mt-[5rem]">
+        <h2>Login</h2>
+  <form [formGroup]="loginForm" class="form">
+    <div class="item mb">
+      <label for="email">Username</label>
+      <input formControlName="username" id="email" type="email" placeholder="email" />
+    </div>
+    <div class="item mb">
+      <label for="password">Password</label>
+      <input
+        formControlName='password'
+        class="input"
+        id="password"
+        [type]="isShowPassword ? 'text' : 'password'"
+        placeholder="Enter password"
+      />
+      <label (click)="$event.stopPropagation()">
+        <input
+          type="checkbox"
+          name="showPassword"
+          [checked]="isShowPassword"
+        />
+        Show password
+      </label>
+    </div>
+    <div class="cta-right">
+      <input class="cta primary-cta" type="submit" (click)="submit()" />
+    </div>
+  </form>
+</div>
